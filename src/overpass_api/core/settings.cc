@@ -146,7 +146,7 @@ Osm_Base_Settings::Osm_Base_Settings()
   shared_name(basic_settings().shared_name_base + "_osm_base"),
   max_num_processes(20),
   purge_timeout(900),
-  total_available_space(12ll*1024*1024*1024),
+  total_available_space(sysconf(_SC_PHYS_PAGES) * sysconf(_SC_PAGE_SIZE)),
   total_available_time_units(256*1024)
 {}
 
